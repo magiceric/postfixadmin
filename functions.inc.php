@@ -1290,7 +1290,7 @@ function db_connect ($ignore_errors = false) {
         if (function_exists ("mysqli_connect")) {
 
             $CONF['database_socket'] = isset($CONF['database_socket']) ? $CONF['database_socket'] : ini_get('mysqli.default_socket');
-            $CONF['database_port'] = isset($CONF['database_port']) ? $CONF['database_socket'] : ini_get('mysqli.default_port');
+            $CONF['database_port'] = isset($CONF['database_port']) ? $CONF['database_port'] : ini_get('mysqli.default_port');
 
             $link = @mysqli_connect ($CONF['database_host'], $CONF['database_user'], $CONF['database_password'], $CONF['database_name'], $CONF['database_port'], $CONF['database_socket']) or $error_text .= ("<p />DEBUG INFORMATION:<br />Connect: " .  mysqli_connect_error () . "$DEBUG_TEXT");
             if ($link) {
